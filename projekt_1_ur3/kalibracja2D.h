@@ -18,7 +18,7 @@ public:
 	*/
 
 	//vector<punkt> transformuj(punkt2D pkt1, punkt pkt2);
-	punkt transformuj(vector<punkt2D> wektor, punkt2D punkt)
+	punkt transformuj(vector<punkt2D> wektor, punkt2D punkt);
 	/*Po podaniu punktu wg skali podanej w transformuj ta funkcja ma za zadanie podany punkt zamienic na punkt wg skali robota .
 	np. mam podane 2 punkty
 	A=(124,265,311) A'=(0,0)
