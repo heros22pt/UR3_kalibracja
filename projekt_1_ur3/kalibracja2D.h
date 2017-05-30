@@ -1,14 +1,31 @@
 #pragma once
 #include "kalibracja.h"
 class kalibracja2D :
-	public kalibracja
+	public cKalibracja
 {
 public:
 	kalibracja2D();
 	
-	punkt kalibruj(punkt pkt);
-	vector<punkt> transformuj();
+	struct punkt2D
+	{
+		float wspolrzedna_x;
+		float wspolrzedna_y;
+	};
+public:
+	punkt kalibruj(punkt2D pkt1, punkt2D pkt2);
 
+	/* zadanie kalibruj: po pobraniu punktow od robota, uzytkownik musi okreslic jakie sa to punkty. tzn np. robot da nam znac ¿e ma punkty A=(154,279,148) a my chcemy, on to interpretowal jako poczatek ukladu wspolrzednych, czy w tym przypadku jako poczatek lini klawiatury czyli punkt A'=(0,0,0).
+	*/
+
+	//vector<punkt> transformuj(punkt2D pkt1, punkt pkt2);
+	void transformuj(vector<punkt2D> wektor, punkt2D punkt)
+	/*Po podaniu punktu wg skali podanej w transformuj ta funkcja ma za zadanie podany punkt zamienic na punkt wg skali robota .
+	np. mam podane 2 punkty
+	A=(124,265,311) A'=(0,0)
+	B=(248,268,411) B'=(1,0)
+	i uzytkownik poda ze chce sie przeniesc do punktu C'=(0.32,0). 
+	zadaniem tego modulu bedzie okreslenie punktu C i zwrocenie go.
+	*/
 
 
 	~kalibracja2D();

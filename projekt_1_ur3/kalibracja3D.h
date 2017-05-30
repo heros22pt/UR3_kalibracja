@@ -1,7 +1,7 @@
 #pragma once
 #include "kalibracja.h"
 class kalibracja3D :
-	public kalibracja
+	public cKalibracja
 {
 public:
 	kalibracja3D();

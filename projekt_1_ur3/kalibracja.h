@@ -9,15 +9,15 @@
 #include<vector>
 using namespace std;
 
+
+class cKalibracja //:public QObject
+{
+	//definicja
+protected:
 struct punkt
 {
 	float x, y, z;
 };
-class kalibracja
-{
-	//definicja
-protected:
-
 	vector<punkt> punkty;
 
 	//metody
