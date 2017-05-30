@@ -22,7 +22,7 @@ protected:
 
 	//metody
 public:
-	punkt pobierz_punkt();
+	void pobierz_punkt(); //ma pobrac punkt i dodac go do vector<punkt> punkty
 	virtual vector<punkt> transformuj() = 0;
 }
 //		//void getter_wspolrzedna_1(float x, float y, float z);
