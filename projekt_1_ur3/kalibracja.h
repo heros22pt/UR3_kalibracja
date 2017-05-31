@@ -8,22 +8,27 @@
 #include ”*.h”
 #include<vector>
 using namespace std;
-
-
-class cKalibracja //:public QObject
-{
-	//definicja
-protected:
 struct punkt
 {
 	float x, y, z;
 };
+struct punktTCP
+{
+	float tab[6];//x,y,z,orient1-3
+};
+class cKalibracja //:public QObject //macro i w qt
+{
+	//definicja
+protected:
+
 	vector<punkt> punkty;
 
 	//metody
 public:
 	void pobierz_punkt(); //ma pobrac punkt i dodac go do vector<punkt> punkty
 	virtual vector<punkt> transformuj() = 0;
+public slots:
+void TCPpose(punktTCP punkt);
 }
 //		//void getter_wspolrzedna_1(float x, float y, float z);
 ///*ok*/	punkt getter_wspolrzedna(/*const punkt &punkt_odniesienia*/); //pobiera wzpolrzedna od robota.. jeden pobiera 3 punkty po kolei... ogolny do wszystkich.. pobiera i zwraca punkt
